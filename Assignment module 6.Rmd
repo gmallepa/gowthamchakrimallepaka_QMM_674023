@@ -1,0 +1,38 @@
+---
+title: "Assignment Modules 6 Transportation"
+author: "Gowtham Chakri Mallepaka"
+date: "2022-10-18"
+output:
+  word_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r }
+library(lpSolve)
+costs<-matrix(c(622,614,630,0,
+              641,645,649,0),ncol=4,byrow=TRUE)
+
+#
+
+row.signs<-rep('<=',2)
+row.rhs<-c(100,120)
+
+#
+col.signs<-rep('>=',4)
+col.rhs<-c(80,60,70,10)
+
+#
+lptrans<-lp.transport(costs,'min',row.signs,row.rhs,col.signs,col.rhs)
+
+lptrans
+lptrans$solution
+lptrans$objval
+
+
+
+
+```
