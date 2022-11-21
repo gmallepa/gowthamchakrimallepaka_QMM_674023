@@ -1,0 +1,60 @@
+---
+title: 'QQM Assignment: Module 11'
+author: "Gowtham Chakri Mallepaka"
+date: "2022-11-21"
+output: pdf_document
+---
+```{r}
+library(lpSolveAPI)
+AP<-read.lp("C:/Users/reliance digital/Downloads/AP.lp")
+AP
+```
+
+```{r}
+solve(AP)
+```
+
+Here 0 means that the model exists
+
+```{r}
+get.objective(AP)
+```
+
+With the given conditions it costs the company $25,675.
+```{r}
+
+get.variables(AP)
+```
+x1=2
+\newline
+x2=4
+\newline
+x3=5
+\newline
+x4= 0
+\newline
+x5=8
+\newline
+x6= 1
+\newline
+x7=13
+\newline
+
+
+Number of workers on each day are as follows:
+  \newline
+Sunday: x2 + x3 + x4 + x5 + x6 = 18
+\newline
+Monday: x3 + x4 + x5 + x6 + x7 = 27
+\newline
+Tuesday: x4 + x5 + x6 + x7 + x1 = 24
+\newline
+Wednesday: x5 + x6 + x7 + x1 + x2 = 28
+\newline
+Thursday: x6 + x7 + x1 + x2 + x3 = 25
+\newline
+Friday: x7 + x1 + x2 + x3 + x4 = 24
+\newline
+Saturday: x1 + x2 + x3 + x4 + x5 = 19
+\newline
+
